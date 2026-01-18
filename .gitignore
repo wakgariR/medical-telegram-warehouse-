@@ -1,0 +1,6 @@
+.venv
+.env
+data/
+*.csv
+.ipynb_checkpoints/
+telegram_scraper_session.session
