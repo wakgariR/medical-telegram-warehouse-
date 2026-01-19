@@ -1,16 +1,25 @@
-from pydantic import BaseModel, Field
-from typing import Optional, List
-from datetime import datetime
+from pydantic import BaseModel
+from typing import List, Optional
 
-class TelegramMessage(BaseModel):
+class TopProduct(BaseModel):
+    product_name: str
+    mentions: int
+
+class ChannelActivity(BaseModel):
+    date: str
+    message_count: int
+    avg_views: Optional[float]
+
+class MessageSearchResult(BaseModel):
     message_id: int
     channel_name: str
-    message_date: datetime
-    message_text: Optional[str] = None
-    has_media: bool = False
-    image_path: Optional[str] = None
-    views: int = Field(default=0, ge=0)
-    forwards: int = Field(default=0, ge=0)
+    message_text: str
+    message_date: str
 
-class ChannelData(BaseModel):
-    messages: List[TelegramMessage]
+class VisualContentStat(BaseModel):
+    channel_name: str
+    total_images: int
+    promotional: int
+    product_display: int
+    lifestyle: int
+    other: int
