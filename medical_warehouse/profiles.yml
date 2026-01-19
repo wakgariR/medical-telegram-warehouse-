@@ -4,8 +4,8 @@ medical_warehouse:
     dev:
       type: postgres
       host: localhost # Or your database IP
-      user: your_db_user # e.g., postgres
-      password: your_password
+      user: postgres # e.g., postgres
+      password: root
       port: 5432
       dbname: medical_db # The name of the DB you created
       schema: public # dbt will create 'staging' and 'marts' schemas
